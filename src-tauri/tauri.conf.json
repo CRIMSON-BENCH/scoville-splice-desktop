@@ -1,0 +1,71 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Scoville Splice",
+  "version": "0.1.0",
+  "identifier": "farm.scovillesplice.app",
+
+  "app": {
+    "windows": [],
+    "security": {
+      "csp": null
+    },
+    "trayIcon": {
+      "iconPath": "icons/tray-icon.png",
+      "iconAsTemplate": false
+    }
+  },
+
+  "build": {
+    "frontendDist": "../frontend-placeholder",
+    "devUrl": "https://www.scovillesplice.farm"
+  },
+
+  "bundle": {
+    "active": true,
+    "targets": ["dmg", "app"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": [],
+    "externalBin": [],
+    "copyright": "© 2026 Scoville Splice. All rights reserved.",
+    "category": "Business",
+    "shortDescription": "Capsaicinoid design platform",
+    "longDescription": "Scoville Splice is the culinary genomics platform for engineered capsaicinoid constructs. Browse 1,000+ precision-designed heat compounds, export molecular data, and access the full AI Intelligence Suite from your desktop.",
+    "macOS": {
+      "frameworks": [],
+      "minimumSystemVersion": "12.0",
+      "signingIdentity": "Developer ID Application: priyanca Ford (JU96628V6R)",
+      "providerShortName": "JU96628V6R",
+      "entitlements": "entitlements.plist",
+      "dmg": {
+        "background": null,
+        "windowSize": { "width": 540, "height": 380 },
+        "windowPosition": { "x": 400, "y": 100 },
+        "applicationFolderPosition": { "x": 368, "y": 192 },
+        "appPosition": { "x": 168, "y": 192 }
+      }
+    }
+  },
+
+  "plugins": {
+    "deepLink": {
+      "desktop": {
+        "schemes": ["scovillesplice"]
+      }
+    },
+    "updater": {
+      "pubkey": "",
+      "endpoints": [
+        "https://www.scovillesplice.farm/api/desktop/update/{{target}}/{{arch}}/{{current_version}}"
+      ],
+      "windows": {
+        "installMode": "passive"
+      }
+    }
+  }
+}
